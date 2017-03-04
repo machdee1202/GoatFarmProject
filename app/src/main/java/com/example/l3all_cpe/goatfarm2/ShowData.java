@@ -474,7 +474,7 @@ public class ShowData extends Activity {
         mButtonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "ย้อนกลับ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "ย้อนกลับไป", Toast.LENGTH_SHORT).show();
                 finish();
             }
         });
