@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:paddingBottom="10dp">
+
+    <TableRow>
+
+
+        <EditText
+            android:id="@+id/edthTimelist"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:inputType="number"/>
+
+        <TextView
+            android:text=":"
+            android:textColor="@color/Black" />
+
+        <EditText
+            android:id="@+id/edtmTimelist"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+        <TextView
+            android:text="น."
+            android:textColor="@color/Black"/>
+
+        <EditText
+            android:id="@+id/edtMilklist"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:text="ลิตร"
+            android:textColor="@color/Black" />
+
+        <TextView
+            android:id="@+id/dellist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:text="ลบ"
+            android:textColor="#ff0011" />
+
+        <TextView
+            android:id="@+id/addlist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="เพิ่ม"
+            android:textColor="#22ff00" />
+
+    </TableRow>
+
+</TableLayout>

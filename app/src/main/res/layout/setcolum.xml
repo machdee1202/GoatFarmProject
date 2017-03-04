@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+<TextView
+    android:id="@+id/ColGoatID"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:text="ลำดับ"
+    android:textColor="@color/Black"/>
+
+<TextView
+    android:id="@+id/ColStall"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:text="คอก"
+    android:textColor="@color/Black"/>
+
+<TextView
+    android:id="@+id/ColAge"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:text="อายุ"
+    android:textColor="@color/Black"/>
+<TextView
+    android:id="@+id/ColGenetic"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="2"
+    android:text="พันธุ์"
+    android:textColor="@color/Black"/>
+<TextView
+    android:id="@+id/ColSex"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:text="เพศ"
+    android:textColor="@color/Black"/>
+<TextView
+    android:id="@+id/ColDate_start"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="2"
+    android:text="วันที่รับเลี้ยง"
+    android:textColor="@color/Black"/>
+
+</LinearLayout>

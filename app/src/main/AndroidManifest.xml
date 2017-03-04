@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.l3all_cpe.goatfarm2">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_app"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".SheetData" />
+        <activity android:name=".ManageAndControl" />
+        <activity android:name=".Sheet_1" />
+        <activity android:name=".Add_Data" />
+        <activity android:name=".ShowData" />
+        <activity android:name=".GoatDetail" />
+        <activity
+            android:name=".SetMilkFeeders"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".UpdateData" />
+        <activity android:name=".RegisterMember" />
+        <activity android:name=".Sheet_2" />
+        <activity android:name=".AddAutoMilkFeeders" />
+        <activity android:name=".SetWater" />
+        <activity android:name=".SetWashing" />
+        <activity android:name=".Select_StallMilk" />
+        <activity android:name=".Select_StallWashing"></activity>
+    </application>
+
+</manifest>

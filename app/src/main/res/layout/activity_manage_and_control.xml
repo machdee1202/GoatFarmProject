@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Back_color"
+    tools:context="com.example.l3all_cpe.goatfarm2.ManageAndControl">
+        <RelativeLayout
+            android:id="@+id/haed_app"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@color/Black">
+
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_app" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/icon"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toEndOf="@+id/icon"
+                android:layout_toRightOf="@+id/icon"
+                android:text="@string/app_name"
+                android:textColor="@color/White"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textViewStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/White"
+                android:textSize="15sp" />
+
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/head_detail"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_below="@+id/haed_app"
+            android:background="#fdfbff">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="การควบคุมและจัดการ"
+                android:textColor="#000"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:id="@+id/button_back"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/ic_back" />
+
+        </RelativeLayout>
+        <View
+            android:layout_height="1dp"
+            android:background="#CCCCCC"
+            android:layout_width="match_parent" />
+
+        <RelativeLayout
+            android:id="@+id/logo"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_below="@+id/head_detail">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="100dp"
+                android:layout_height="160dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/ic_milk" />
+
+
+        </RelativeLayout>
+
+
+        <View
+            android:layout_height="1dp"
+            android:background="#CCCCCC"
+            android:layout_width="match_parent"/>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/logo"
+            android:paddingBottom="10dp">
+
+            <RelativeLayout
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:id="@+id/ch_select"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/button1"
+                    android:layout_width="280dp"
+                    android:layout_height="50dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/Button_color"
+                    android:text="แสดงข้อมูลแพะ"
+                    android:textColor="@color/White"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="280dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/button1"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="6dp"
+                    android:background="@color/Button_color"
+                    android:text="ตั้งค่าการให้นม"
+                    android:textColor="@color/White"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="280dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/button2"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="6dp"
+                    android:background="@color/Button_color"
+                    android:text="เปิด/ปิดการให้น้ำ"
+                    android:textColor="@color/White"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/button4"
+                    android:layout_width="280dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/button3"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="6dp"
+                    android:background="@color/Button_color"
+                    android:text="ตั้งค่าการล้างภาชณะ"
+                    android:textColor="@color/White"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+        </ScrollView>
+        <View
+            android:layout_height="1dp"
+            android:background="#CCCCCC"
+            android:layout_width="match_parent" />
+
+    </TableLayout>
+
+
+

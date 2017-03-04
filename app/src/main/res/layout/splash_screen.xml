@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/Back_color"
+    tools:context="com.example.l3all_cpe.goatfarm2.SplashScreen">
+
+    <ImageView
+        android:paddingTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="430dp"
+        android:src="@drawable/ic_app"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Goat Farm"
+        android:textSize="40sp"
+        android:textColor="#000000"
+        android:layout_gravity="center_horizontal"
+        android:textStyle="italic"
+        />
+
+</LinearLayout>

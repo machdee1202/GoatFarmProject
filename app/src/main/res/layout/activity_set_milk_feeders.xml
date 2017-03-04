@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Back_color"
+    tools:context="com.example.l3all_cpe.goatfarm2.SetMilkFeeders">
+
+    <RelativeLayout
+        android:id="@+id/haed_app"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/Black">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_app" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/icon"
+            android:layout_marginBottom="10dp"
+            android:layout_toEndOf="@+id/icon"
+            android:layout_toRightOf="@+id/icon"
+            android:text="@string/app_name"
+            android:textColor="@color/White"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/ic_setting" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/head_detail"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_below="@+id/haed_app"
+        android:background="#fdfbff">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="ตั้งค่าการให้นม"
+            android:textColor="@color/Black"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/button_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ic_back" />
+
+    </RelativeLayout>
+
+    <TableRow android:padding="10dp">
+
+        <TextView
+            android:text="ปริมาณนม  :"
+            android:textColor="@color/Black"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/strInmilk"
+            android:ems="3"
+            android:inputType="number" />
+
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:text="ลิตร"
+            android:textColor="@color/Black"
+            android:textSize="20sp" />
+    </TableRow>
+
+    <TableRow
+        android:paddingLeft="10dp"
+        >
+        <TextView
+            android:text="คอกที่ : "
+            android:textColor="@color/Black"/>
+        <TextView
+            android:id="@+id/txtStallSL"
+            android:text="คอก"
+            android:textColor="@color/Black"/>
+    </TableRow>
+
+    <Button
+        android:id="@+id/btStallActiveNow"
+        android:text="เลือกคอก"
+        android:textColor="@color/Black"
+        android:layout_height="50dp"/>
+
+    <TableRow
+        android:gravity="center"
+        android:padding="10dp">
+
+
+
+        <Button
+            android:id="@+id/btActiveNow"
+            android:background="@color/Button_color"
+            android:text="ให้นมทันที"
+            android:textColor="@color/White" />
+    </TableRow>
+
+    <TableRow
+        android:gravity="center"
+        android:padding="10dp">
+
+        <TextView
+            android:text="ตั้งค่าอัตโนมัติ"
+            android:textColor="@color/Black"
+            android:textSize="20sp"
+            android:textStyle="bold|italic" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="end">
+
+            <TextView
+                android:id="@+id/btDel"
+                android:layout_gravity="end"
+                android:textSize="30dp"
+                android:text="--"
+                android:textStyle="bold"
+                android:textColor="#ff0000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+        <TextView
+            android:id="@+id/btAdd"
+            android:layout_gravity="center"
+            android:textSize="30dp"
+            android:text="+"
+            android:textStyle="bold"
+            android:textColor="#04ff00"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+    </TableRow>
+
+    <View
+        android:paddingTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="1dip"
+        android:background="#CCCCCC" />
+
+    <LinearLayout
+        android:id="@+id/milkset"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.1"
+        android:orientation="horizontal">
+
+        <ListView
+            android:id="@+id/listViewPattern"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></ListView>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dip"
+        android:background="#CCCCCC" />
+
+</TableLayout>
