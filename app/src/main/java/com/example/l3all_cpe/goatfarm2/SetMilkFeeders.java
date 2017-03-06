@@ -29,6 +29,8 @@ import java.util.HashMap;
 import java.util.List;
 
 public class SetMilkFeeders extends Activity {
+
+    private Button btninputmilk;
     private Button mActiveMilk;
     private Button mSelectStall;
     private ImageButton mButtonBack;
@@ -38,6 +40,8 @@ public class SetMilkFeeders extends Activity {
     RadioButton rdBt;
     ArrayList<HashMap<String, String>> BtnList;
     String[] itemmilk ={"0.5","1","1.5","2"};
+
+
 
 
     //ListView listmilk=null;
@@ -51,6 +55,7 @@ public class SetMilkFeeders extends Activity {
         selectMenu();
 
         Activemilk_now();
+
 
 
         //listmilk=new ListView(this);
@@ -77,6 +82,32 @@ public class SetMilkFeeders extends Activity {
         strIP = ipHelper.getIP();
 
 
+
+        btninputmilk.setOnClickListener(new View.OnClickListener() {
+                                            @Override
+                                            public void onClick(View v) {
+                                                AlertDialog.Builder selectMilk = new AlertDialog.Builder(SetMilkFeeders.this);
+                                                selectMilk.setTitle("เลือกปริมาณนม");
+                                                selectMilk.setItems(itemmilk, new DialogInterface.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(DialogInterface dialog, int which) {
+
+                                                        String selected = itemmilk[which];
+                                                        Toast.makeText(getApplicationContext(), "เลือก " +
+                                                                selected, Toast.LENGTH_SHORT).show();
+                                                        btninputmilk.setText(selected);
+
+
+                                                    }
+                                                });
+                                                selectMilk.create();
+
+
+                                                selectMilk.show();
+
+                                            }
+                                        });
+
        // mSelectStall
         mSelectStall.setOnClickListener(new View.OnClickListener()
 
@@ -97,12 +128,27 @@ public class SetMilkFeeders extends Activity {
                                        {
                                            @Override
                                            public void onClick(View v) {
-                                               AlertDialog.Builder giveMilk = new AlertDialog.Builder(SetMilkFeeders.this);
+                                               final AlertDialog.Builder giveMilk = new AlertDialog.Builder(SetMilkFeeders.this);
+                                               giveMilk.setTitle("ยืนยันการให้นม");
+                                               giveMilk.setPositiveButton("ยืนยัน", new DialogInterface.OnClickListener() {
+                                                   @Override
+                                                   public void onClick(DialogInterface confirm, int which) {
+                                                      // if(btninputmilk.toString().equals("")){
+                                                           //Toast.makeText(getApplicationContext(), "กรุณาเลือกจำนวนนม", Toast.LENGTH_SHORT).show();
+                                                           //giveMilk.show();
+                                                      // }
 
-
-
-                                               Toast.makeText(getApplicationContext(), "ให้อาหาร", Toast.LENGTH_SHORT).show();
-                                               Activemilk_now();
+                                                       Toast.makeText(getApplicationContext(), "ให้นมคอกที่", Toast.LENGTH_SHORT).show();
+                                                   }
+                                               });
+                                               giveMilk.setNegativeButton("ยกเลิก", new DialogInterface.OnClickListener() {
+                                                   @Override
+                                                   public void onClick(DialogInterface cancel, int which) {
+                                                       Toast.makeText(getApplicationContext(), "ยกเลิก", Toast.LENGTH_SHORT).show();
+                                                       cancel.cancel();
+                                                   }
+                                               });
+                                               giveMilk.show();
                                            }
 
                                        }
@@ -204,10 +250,9 @@ public class SetMilkFeeders extends Activity {
 
         final TextView tStall = (TextView) findViewById(R.id.txtStallSL);
 
-        Intent intent = getIntent();
-        final String Stall = intent.getStringExtra("Stall");
 
-  /*      String ww = "http://";
+
+        String ww = "http://";
         String fphp ="/getByStall_Select.php";
         String url = ww + strIP + fphp;
 
@@ -222,7 +267,7 @@ public class SetMilkFeeders extends Activity {
          *
          */
 
-    /*    String resultServer = NetConnect.getHttpPost(url, params);
+        String resultServer = NetConnect.getHttpPost(url, params);
 
         String strStall = "";
 
@@ -245,9 +290,9 @@ public class SetMilkFeeders extends Activity {
         } catch (JSONException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-        }*/
+        }
 
-        tStall.setText(Stall);
+        //tStall.setText(Stall);
     }
 
 
@@ -316,7 +361,7 @@ public class SetMilkFeeders extends Activity {
     }
 
     private void selectMenu() {
-
+        btninputmilk = (Button) findViewById(R.id.btnInmilk) ;
         btAdd = (TextView) findViewById(R.id.btAdd);
         btDel = (TextView) findViewById(R.id.btDel);
         mButtonBack = (ImageButton) findViewById(R.id.button_back);
