@@ -40,7 +40,7 @@ public class SetMilkFeeders extends Activity {
     String[] itemmilk ={"0.5","1","1.5","2"};
 
 
-    ListView listmilk=null;
+    //ListView listmilk=null;
 
     String strIP = "";
 
@@ -50,8 +50,10 @@ public class SetMilkFeeders extends Activity {
         setContentView(R.layout.activity_set_milk_feeders);
         selectMenu();
 
+        Activemilk_now();
 
-        listmilk=new ListView(this);
+
+        //listmilk=new ListView(this);
         //String[] itemmilk ={"0.5","1","1.5","2"};
 
 
@@ -95,6 +97,10 @@ public class SetMilkFeeders extends Activity {
                                        {
                                            @Override
                                            public void onClick(View v) {
+                                               AlertDialog.Builder giveMilk = new AlertDialog.Builder(SetMilkFeeders.this);
+
+
+
                                                Toast.makeText(getApplicationContext(), "ให้อาหาร", Toast.LENGTH_SHORT).show();
                                                Activemilk_now();
                                            }
@@ -157,7 +163,7 @@ public class SetMilkFeeders extends Activity {
 
     public  void Activemilk_now(){
 
-         final Button btninputmilk = (Button) findViewById(R.id.btnInmilk) ;
+        final Button btninputmilk = (Button) findViewById(R.id.btnInmilk) ;
         btninputmilk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -168,8 +174,10 @@ public class SetMilkFeeders extends Activity {
                     public void onClick(DialogInterface dialog, int which) {
 
                         String selected = itemmilk[which];
-                        Toast.makeText(getApplicationContext(), "คุณชอบ " +
+                        Toast.makeText(getApplicationContext(), "เลือก " +
                                 selected, Toast.LENGTH_SHORT).show();
+                        btninputmilk.setText(selected);
+
 
                     }
                 });
@@ -196,7 +204,10 @@ public class SetMilkFeeders extends Activity {
 
         final TextView tStall = (TextView) findViewById(R.id.txtStallSL);
 
-        String ww = "http://";
+        Intent intent = getIntent();
+        final String Stall = intent.getStringExtra("Stall");
+
+  /*      String ww = "http://";
         String fphp ="/getByStall_Select.php";
         String url = ww + strIP + fphp;
 
@@ -208,10 +219,10 @@ public class SetMilkFeeders extends Activity {
 
         /** Get result from Server (Return the JSON Code)
          *
-         * {"MemberID":"2","Username":"adisorn","Password":"adisorn@2","Name":"Adisorn Bunsong","Tel":"021978032","Email":"adisorn@thaicreate.com"}
+         *
          */
 
-        String resultServer = NetConnect.getHttpPost(url, params);
+    /*    String resultServer = NetConnect.getHttpPost(url, params);
 
         String strStall = "";
 
@@ -234,7 +245,9 @@ public class SetMilkFeeders extends Activity {
         } catch (JSONException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-        }
+        }*/
+
+        tStall.setText(Stall);
     }
 
 

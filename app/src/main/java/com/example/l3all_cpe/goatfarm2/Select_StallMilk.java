@@ -201,7 +201,7 @@ public class Select_StallMilk extends Activity {
                     if (chk_slStall.isChecked()==true){
 
                         Log.d("เลือกคอกที่  "+MyArrList.get(position).get("Stall").toString(), chk_slStall.getTag().toString());
-                        Toast.makeText(getApplicationContext(), "เลือกคอกที่ : "+ MyArrList.get(position).get("Stall"), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "คอกที่ : "+ MyArrList.get(position).get("Stall"), Toast.LENGTH_SHORT).show();
                         //String sStall = MyArrList.get(position).get("Stall").toString();
                         //Intent newActivity = new Intent(Select_StallMilk.this,SetMilkFeeders.class);
                         //newActivity.putExtra("Stall", sStall);
@@ -230,23 +230,24 @@ public class Select_StallMilk extends Activity {
                             LinearLayout itemLayout = (LinearLayout)lisView1.getChildAt(i); // Find by under LinearLayout
                             CheckBox chk_slStall = (CheckBox)itemLayout.findViewById(R.id.chk_slStall);
 
-                            if(chk_slStall.isChecked())
+                            if(chk_slStall.isChecked()==true)
                             {
                                 //Log.d("Item  "+String.valueOf(i), chk_slStall.getTag().toString());
                                 Log.d("Item  "+MyArrList.get(position).get("Stall").toString(), chk_slStall.getTag().toString());
-                                Toast.makeText(Select_StallMilk.this,chk_slStall.getTag().toString() ,Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "เลือกคอกที่" + chk_slStall.getTag().toString() ,Toast.LENGTH_SHORT).show();
                                 //Toast.makeText(getApplicationContext(), "เลือกคอกที่ : "+ MyArrList.get(position).get("Stall"), Toast.LENGTH_SHORT).show();
-                                String sStall = chk_slStall.getTag().toString();
+                                String sStall= chk_slStall.getTag().toString();
                                 Intent newActivity = new Intent(Select_StallMilk.this,SetMilkFeeders.class);
                                 newActivity.putExtra("Stall", sStall);
                                 startActivity(newActivity);
-                                finish();
+
 
                             }
 
+
                         }
 
-
+                    finish();
 
                 }
             });
