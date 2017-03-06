@@ -73,10 +73,11 @@
             android:textColor="@color/Black"
             android:textSize="20sp" />
 
-        <EditText
-            android:id="@+id/strInmilk"
-            android:ems="3"
-            android:inputType="number" />
+        <Button
+            android:id="@+id/btnInmilk"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            />
 
 
         <TextView

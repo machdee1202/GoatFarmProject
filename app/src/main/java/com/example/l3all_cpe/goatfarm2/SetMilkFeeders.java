@@ -3,6 +3,7 @@ package com.example.l3all_cpe.goatfarm2;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.StrictMode;
 import android.os.Bundle;
@@ -36,7 +37,10 @@ public class SetMilkFeeders extends Activity {
     Button btnOnOff;
     RadioButton rdBt;
     ArrayList<HashMap<String, String>> BtnList;
+    String[] itemmilk ={"0.5","1","1.5","2"};
 
+
+    ListView listmilk=null;
 
     String strIP = "";
 
@@ -45,6 +49,10 @@ public class SetMilkFeeders extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_milk_feeders);
         selectMenu();
+
+
+        listmilk=new ListView(this);
+        //String[] itemmilk ={"0.5","1","1.5","2"};
 
 
         //setWidgetEvenListener();
@@ -149,13 +157,35 @@ public class SetMilkFeeders extends Activity {
 
     public  void Activemilk_now(){
 
-         final EditText strinputmilk = (EditText)findViewById(R.id.strInmilk) ;
+         final Button btninputmilk = (Button) findViewById(R.id.btnInmilk) ;
+        btninputmilk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder selectMilk = new AlertDialog.Builder(SetMilkFeeders.this);
+                selectMilk.setTitle("เลือกปริมาณนม");
+                selectMilk.setItems(itemmilk, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        String selected = itemmilk[which];
+                        Toast.makeText(getApplicationContext(), "คุณชอบ " +
+                                selected, Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+                selectMilk.create();
+
+
+                selectMilk.show();
+
+            }
+        });
 
 
 
         // Disbled Keyboard auto focus
         InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-        inputManager.hideSoftInputFromWindow(strinputmilk.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+        inputManager.hideSoftInputFromWindow(btninputmilk.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
 
         return;
     }

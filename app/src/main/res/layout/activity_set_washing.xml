@@ -72,12 +72,13 @@
         <TextView
             android:id="@+id/txtStallWashing"
             android:textColor="@color/Black"
-            android:text="เลือกคอก" />
+            android:text="คอก" />
 
     </TableRow>
     <Button
         android:id="@+id/btStallWashing"
         android:layout_height="40dp"
+        android:layout_width="40dp"
         android:text="เลือกคอก" />
 
     <RelativeLayout
@@ -113,17 +114,11 @@
             android:textColor="@color/Black"
             />
         <Button
+            android:id="@+id/btnTimeclean"
             android:layout_marginLeft="5dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="number"
+            android:layout_height="40dp"
 
-            />
-        <TextView
-            android:textSize="15sp"
-            android:layout_marginLeft="10dp"
-            android:text="ชั่วโมง"
-            android:textColor="@color/Black"
 
             />
     </TableRow>
