@@ -96,7 +96,7 @@
             android:textColor="@color/Black"/>
         <TextView
             android:id="@+id/txtStallSL"
-            android:text="คอก"
+            android:background="#a4efed"
             android:textColor="@color/Black"/>
     </TableRow>
 

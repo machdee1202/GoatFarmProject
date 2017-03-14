@@ -224,6 +224,7 @@ public class Select_StallMilk extends Activity {
 
                     final ListView lisView1 = (ListView)findViewById(R.id.listView_slStallMilk);
                     //lisView1.setAdapter(new ImageAdapter(Select_StallMilk.this));
+                    Intent newActivity = new Intent(Select_StallMilk.this,SetMilkFeeders.class);
 
                         int count = lisView1.getAdapter().getCount();
                         for (int i = 0; i < count; i++) {
@@ -233,20 +234,21 @@ public class Select_StallMilk extends Activity {
                             if(chk_slStall.isChecked()==true)
                             {
                                 //Log.d("Item  "+String.valueOf(i), chk_slStall.getTag().toString());
-                                Log.d("Item  "+MyArrList.get(position).get("Stall").toString(), chk_slStall.getTag().toString());
-                                Toast.makeText(getApplicationContext(), "เลือกคอกที่" + chk_slStall.getTag().toString() ,Toast.LENGTH_SHORT).show();
+                                Log.d("Item  ", chk_slStall.getTag().toString());
+                                Toast.makeText(getApplicationContext(), "เลือกคอกที่ " + chk_slStall.getTag().toString() ,Toast.LENGTH_SHORT).show();
                                 //Toast.makeText(getApplicationContext(), "เลือกคอกที่ : "+ MyArrList.get(position).get("Stall"), Toast.LENGTH_SHORT).show();
+                                //***รอแก้การส่งค่า***//
                                 String sStall= chk_slStall.getTag().toString();
-                                Intent newActivity = new Intent(Select_StallMilk.this,SetMilkFeeders.class);
+                                //Intent newActivity = new Intent(Select_StallMilk.this,SetMilkFeeders.class);
+                                //***รอแก้การส่งค่า***//
                                 newActivity.putExtra("Stall", sStall);
-                                startActivity(newActivity);
+                                //startActivity(newActivity);
 
 
                             }
 
-
                         }
-
+                    startActivity(newActivity);
                     finish();
 
                 }
