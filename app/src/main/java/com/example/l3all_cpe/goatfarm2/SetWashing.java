@@ -105,7 +105,7 @@ public class SetWashing extends Activity {
             }
         });
 
-        mButtonBack = (ImageButton) findViewById(R.id.button_back);
+
         mButtonBack.setOnClickListener(new View.OnClickListener()
 
                                        {

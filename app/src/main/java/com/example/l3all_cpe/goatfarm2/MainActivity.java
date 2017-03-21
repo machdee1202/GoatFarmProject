@@ -95,75 +95,87 @@ public class MainActivity extends Activity {
                         String strIP = ip.getText().toString();
                         String fphp ="/checkLogin.php";
                         String url = ww+strIP+fphp;
-                        //ip.getText().toString();
-                        List<NameValuePair> params = new ArrayList<NameValuePair>();
-                        params.add(new BasicNameValuePair("strUser", user.getText().toString()));
-                        params.add(new BasicNameValuePair("strPass", password.getText().toString()));
 
-                        /**
-                         * Get result from Server (Return the JSON Code)
-                         * StatusID = ? [0=Failed,1=Complete]
-                         * MemberID = ? [Eg : 1]
-                         * Error	= ?	[On case error return custom error message]
-                         * <p/>
-                         * Eg Login Failed = {"StatusID":"0","MemberID":"0","Error":"Incorrect Username and Password"}
-                         * Eg Login Complete = {"StatusID":"1","MemberID":"2","Error":""}
-                         */
-
-                        String resultServer = NetConnect.getHttpPost(url, params);
-
-                        /***
-                         * Default Value
-                         ***/
-                        String strStatusID = "0";
-                        String strMemberID = "0";
-                        String strError = "ไม่สามารถเชื่อมต่อเซิฟเวอร์!";
-
-                        JSONObject c;
-                        try
-
-                        {
-                            c = new JSONObject(resultServer);
-                            strStatusID = c.getString("StatusID");
-                            strMemberID = c.getString("MemberID");
-                            strError = c.getString("Error");
-
-                        } catch (
-                                JSONException e
-                                )
-
-                        {
-                            // TODO Auto-generated catch block
-                            e.printStackTrace();
-                        }
-
-                        // if(ip.equals(0))
-                        //{}
-
-                        // Prepare Login
-                        if (strStatusID.equals("0"))
-
+                        if (strIP.equals(""))
                         {
                             //Dialog
                             final AlertDialog.Builder ad = new AlertDialog.Builder(MainActivity.this);
                             ad.setTitle("ผิดพลาด! ");
                             ad.setIcon(android.R.drawable.btn_star_big_on);
                             ad.setPositiveButton("ปิด", null);
-                            ad.setMessage(strError);
+                            ad.setMessage("กรุณาระบุไอพีด้วย");
                             ad.show();
 
-                            //Toast.makeText(getApplicationContext(), "ล็อกอินไม่สำเร็จ!", Toast.LENGTH_SHORT).show();
-                            user.setText("");
-                            password.setText("");
-                        } else
+                        } else {
+                            //ip.getText().toString();
+                            List<NameValuePair> params = new ArrayList<NameValuePair>();
+                            params.add(new BasicNameValuePair("strUser", user.getText().toString()));
+                            params.add(new BasicNameValuePair("strPass", password.getText().toString()));
 
-                        {
-                            Toast.makeText(getApplicationContext(), "ล็อกอินสำเร็จ!", Toast.LENGTH_SHORT).show();
-                            ipHelper.createSession(strIP);
-                            startActivity(new Intent(getApplicationContext(), ManageAndControl.class));
-                            dialog.dismiss();
+                            /**
+                             * Get result from Server (Return the JSON Code)
+                             * StatusID = ? [0=Failed,1=Complete]
+                             * MemberID = ? [Eg : 1]
+                             * Error	= ?	[On case error return custom error message]
+                             * <p/>
+                             * Eg Login Failed = {"StatusID":"0","MemberID":"0","Error":"Incorrect Username and Password"}
+                             * Eg Login Complete = {"StatusID":"1","MemberID":"2","Error":""}
+                             */
+
+                            String resultServer = NetConnect.getHttpPost(url, params);
+
+                            /***
+                             * Default Value
+                             ***/
+                            String strStatusID = "0";
+                            String strMemberID = "0";
+                            String strError = "ไม่สามารถเชื่อมต่อเซิฟเวอร์!";
+
+                            JSONObject c;
+                            try
+
+                            {
+                                c = new JSONObject(resultServer);
+                                strStatusID = c.getString("StatusID");
+                                strMemberID = c.getString("MemberID");
+                                strError = c.getString("Error");
+
+                            } catch (
+                                    JSONException e
+                                    )
+
+                            {
+                                // TODO Auto-generated catch block
+                                e.printStackTrace();
+                            }
+
+                            // if(ip.equals(0))
+                            //{}
+
+                            // Prepare Login
+                            if (strStatusID.equals("0"))
+
+                            {
+                                //Dialog
+                                final AlertDialog.Builder ad = new AlertDialog.Builder(MainActivity.this);
+                                ad.setTitle("ผิดพลาด! ");
+                                ad.setIcon(android.R.drawable.btn_star_big_on);
+                                ad.setPositiveButton("ปิด", null);
+                                ad.setMessage(strError);
+                                ad.show();
+
+                                //Toast.makeText(getApplicationContext(), "ล็อกอินไม่สำเร็จ!", Toast.LENGTH_SHORT).show();
+                                user.setText("");
+                                password.setText("");
+                            } else
+
+                            {
+                                Toast.makeText(getApplicationContext(), "ล็อกอินสำเร็จ!", Toast.LENGTH_SHORT).show();
+                                ipHelper.createSession(strIP);
+                                startActivity(new Intent(getApplicationContext(), ManageAndControl.class));
+                                dialog.dismiss();
+                            }
                         }
-
                         /*if (ip.getText().equals("pi") &&
                                 username.getText().equals("ball") &&
                                 password.getText().equals("bb")) {*/

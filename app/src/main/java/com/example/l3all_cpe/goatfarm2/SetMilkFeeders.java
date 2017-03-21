@@ -216,7 +216,6 @@ public class SetMilkFeeders extends Activity {
                 }
 
                else if(tStall.getText().toString().equals("")){
-                    //***เงื่อนไขนี้ยังใช้งานไม่ได้***///*
                     final AlertDialog.Builder giveMilk3 = new AlertDialog.Builder(SetMilkFeeders.this);
                     giveMilk3.setTitle("กรุณาระบุคอก");
                     giveMilk3.setPositiveButton("ปิด", null);
@@ -225,7 +224,18 @@ public class SetMilkFeeders extends Activity {
 
                 }
                 else {
-                    //** แมทตอทสำหรับส่งค่าไปยังเซิฟเวอร์**//
+                    //** รอแก้การส่งค่าไปยังเซิฟเวอร์**//
+
+                    //String ww = "http://";
+                    //String fphp ="/.....";
+                    //String url = ww + strIP + fphp;
+
+                    //String resultServer = NetConnect.getHttpPost(url, params);
+
+
+
+
+
 
 
                     Toast.makeText(getApplicationContext(), "ให้นมคอกที่ " + Stall, Toast.LENGTH_SHORT).show();
@@ -248,8 +258,6 @@ public class SetMilkFeeders extends Activity {
 
 
 
-
-
         // Disbled Keyboard auto focus
         InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         inputManager.hideSoftInputFromWindow(btninputmilk.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
@@ -265,15 +273,15 @@ public class SetMilkFeeders extends Activity {
 
 
 
-        String ww = "http://";
-        String fphp ="/getByStall_Select.php";
-        String url = ww + strIP + fphp;
+        //String ww = "http://";
+        //String fphp ="/getByStall_Select.php";
+        //String url = ww + strIP + fphp;
 
         Intent intent = getIntent();
         final String Stall = intent.getStringExtra("Stall");
 
-        List<NameValuePair> params = new ArrayList<NameValuePair>();
-        params.add(new BasicNameValuePair("sStall", Stall));
+        //List<NameValuePair> params = new ArrayList<NameValuePair>();
+        //params.add(new BasicNameValuePair("sStall", Stall));
 
         /** Get result from Server (Return the JSON Code)
          *
