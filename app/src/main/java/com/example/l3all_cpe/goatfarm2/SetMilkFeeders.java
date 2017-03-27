@@ -228,6 +228,8 @@ public class SetMilkFeeders extends Activity {
                 }
                 else {
                     //** รอแก้การส่งค่าไปยังเซิฟเวอร์**//
+                    final AlertDialog.Builder adb = new AlertDialog.Builder(SetMilkFeeders.this);
+                    AlertDialog ad = adb.create();
 
                     String ww = "http://";
                     String fphp ="/addJobs.php";
@@ -240,8 +242,7 @@ public class SetMilkFeeders extends Activity {
                     params.add(new BasicNameValuePair("sTjob_sl", Tjobs.toString()));
 
                     String resultServer = NetConnect.getHttpPost(url, params);
-                    final AlertDialog.Builder adb = new AlertDialog.Builder(SetMilkFeeders.this);
-                    AlertDialog ad = adb.create();
+
 
                     /*** Default Value ***/
                     String strStatusID = "0";
