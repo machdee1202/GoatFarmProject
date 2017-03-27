@@ -24,6 +24,7 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -41,6 +42,7 @@ public class SetMilkFeeders extends Activity {
     RadioButton rdBt;
     ArrayList<HashMap<String, String>> BtnList;
     String[] itemmilk ={"0.5","1","1.5","2"};
+    Time Tjobs ;
 
 
 
@@ -199,6 +201,7 @@ public class SetMilkFeeders extends Activity {
         Intent intent = getIntent();
         final String Stall = intent.getStringExtra("Stall");
 
+
         final AlertDialog.Builder giveMilk = new AlertDialog.Builder(SetMilkFeeders.this);
         giveMilk.setTitle("ยืนยันการให้นม");
         giveMilk.setPositiveButton("ยืนยัน", new DialogInterface.OnClickListener() {
@@ -226,20 +229,52 @@ public class SetMilkFeeders extends Activity {
                 else {
                     //** รอแก้การส่งค่าไปยังเซิฟเวอร์**//
 
-                    //String ww = "http://";
-                    //String fphp ="/.....";
-                    //String url = ww + strIP + fphp;
-
-                    //String resultServer = NetConnect.getHttpPost(url, params);
+                    String ww = "http://";
+                    String fphp ="/addJobs.php";
+                    String url = ww + strIP + fphp;
 
 
+                    List<NameValuePair> params = new ArrayList<NameValuePair>();
+                    params.add(new BasicNameValuePair("sStall_sl", tStall.getText().toString()));
+                    params.add(new BasicNameValuePair("sMilk_now", btninputmilk.getText().toString()));
+                    params.add(new BasicNameValuePair("sTjob_sl", Tjobs.toString()));
+
+                    String resultServer = NetConnect.getHttpPost(url, params);
+                    final AlertDialog.Builder adb = new AlertDialog.Builder(SetMilkFeeders.this);
+                    AlertDialog ad = adb.create();
+
+                    /*** Default Value ***/
+                    String strStatusID = "0";
+                    String strError = "ไม่สามารถเชื่อมต่อเซิฟเวอร์!";
+
+                    JSONObject c;
+                    try {
+                        c = new JSONObject(resultServer);
+                        strStatusID = c.getString("StatusID");
+                        strError = c.getString("Error");
+                    } catch (JSONException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+
+                    // Prepare Save Data
+                    if(strStatusID.equals("0"))
+                    {
+                        ad.setMessage(strError);
+                        ad.show();
+
+                    }
+                    else
+                    {
+                        Toast.makeText(getApplicationContext(), "เพิ่มการให้นมคอกที่ " + Stall +" แล้ว", Toast.LENGTH_SHORT).show();
+                        btninputmilk.setText("");
+                        tStall.setText("");
+
+                    }
 
 
-
-
-
-                    Toast.makeText(getApplicationContext(), "ให้นมคอกที่ " + Stall, Toast.LENGTH_SHORT).show();
-                    finish();
+                    //Toast.makeText(getApplicationContext(), "ให้นมคอกที่ " + Stall, Toast.LENGTH_SHORT).show();
+                    //finish();
                 }
 
 
