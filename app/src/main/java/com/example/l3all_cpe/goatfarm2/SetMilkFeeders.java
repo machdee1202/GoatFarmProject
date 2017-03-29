@@ -28,6 +28,8 @@ import java.sql.Time;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.TimeZone;
+import java.util.Timer;
 
 public class SetMilkFeeders extends Activity {
 
@@ -42,7 +44,7 @@ public class SetMilkFeeders extends Activity {
     RadioButton rdBt;
     ArrayList<HashMap<String, String>> BtnList;
     String[] itemmilk ={"0.5","1","1.5","2"};
-    Time Tjobs ;
+    String Tjobs = "NOW";
 
 
 
@@ -231,6 +233,7 @@ public class SetMilkFeeders extends Activity {
                     final AlertDialog.Builder adb = new AlertDialog.Builder(SetMilkFeeders.this);
                     AlertDialog ad = adb.create();
 
+
                     String ww = "http://";
                     String fphp ="/addJobs.php";
                     String url = ww + strIP + fphp;
@@ -263,16 +266,13 @@ public class SetMilkFeeders extends Activity {
                     {
                         ad.setMessage(strError);
                         ad.show();
-
                     }
                     else
                     {
                         Toast.makeText(getApplicationContext(), "เพิ่มการให้นมคอกที่ " + Stall +" แล้ว", Toast.LENGTH_SHORT).show();
                         btninputmilk.setText("");
                         tStall.setText("");
-
                     }
-
 
                     //Toast.makeText(getApplicationContext(), "ให้นมคอกที่ " + Stall, Toast.LENGTH_SHORT).show();
                     //finish();

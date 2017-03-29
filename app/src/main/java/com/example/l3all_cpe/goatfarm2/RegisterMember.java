@@ -146,7 +146,7 @@ public class RegisterMember extends Activity {
 
         /*** Default Value ***/
         String strStatusID = "0";
-        String strError = "Unknow Status!";
+        String strError = "ไม่สามารถเชื่อมต่อเซิฟเวอร์!";
 
         JSONObject c;
         try {
