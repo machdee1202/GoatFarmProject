@@ -7,299 +7,293 @@
     tools:context="com.example.l3all_cpe.goatfarm2.AddAutoMilkFeeders">
 
 
-        <RelativeLayout
-            android:id="@+id/haed_app"
-            android:layout_width="match_parent"
+    <RelativeLayout
+        android:id="@+id/haed_app"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/Black">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_app" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/icon"
+            android:layout_marginBottom="10dp"
+            android:layout_toEndOf="@+id/icon"
+            android:layout_toRightOf="@+id/icon"
+            android:text="@string/app_name"
+            android:textColor="@color/White"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/head_detail"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_below="@+id/haed_app"
+        android:background="@color/White">
+
+        <TextView
+            android:id="@+id/TextNamePattern"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Name"
+            android:textColor="@color/Black"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/button_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ic_back" />
+
+        <Button
+            android:id="@+id/btnEdName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@color/White"
+            android:text="| เปลี่ยนชื่อ |" />
+
+    </RelativeLayout>
+
+    <TableRow
+        android:paddingBottom="5dp"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="เลือกช่วงอายุ"
+            android:textColor="@color/Black"
+            android:textSize="20sp" />
+
+        <Button
+
+            android:id="@+id/btnPlanAge"
             android:layout_height="40dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:background="@color/Black">
+            android:layout_marginLeft="10dp"
+            android:text="ช่วงอายุ"
+            android:textSize="15sp"
 
-            <ImageView
-                android:id="@+id/icon"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/ic_app" />
+            />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/icon"
-                android:layout_marginBottom="10dp"
-                android:layout_toEndOf="@+id/icon"
-                android:layout_toRightOf="@+id/icon"
-                android:text="@string/app_name"
-                android:textColor="@color/White"
-                android:textSize="20sp" />
-        </RelativeLayout>
+    </TableRow>
 
-        <RelativeLayout
-            android:id="@+id/head_detail"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_below="@+id/haed_app"
-            android:background="@color/White">
-
-            <TextView
-                android:id="@+id/TextNamePattern"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:text="Name"
-                android:textColor="@color/Black"
-                android:textSize="20sp" />
-
-            <ImageButton
-                android:id="@+id/button_back"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_centerVertical="true"
-                android:background="@drawable/ic_back" />
-
-            <Button
-                android:id="@+id/btnEdName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:background="@color/White"
-                android:text="| เปลี่ยนชื่อ |" />
-
-        </RelativeLayout>
-
-        <TableRow android:paddingTop="10dp"
-            android:paddingBottom="5dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:text="เลือกช่วงอายุ"
-                android:textColor="@color/Black"
-                android:textSize="20sp" />
-
-            <Button
-
-                android:layout_height="40dp"
-                android:id="@+id/btnPlanAge"
-                android:layout_marginLeft="10dp"
-                android:text="ช่วงอายุ"
-                android:textSize="15sp"
-
-                />
-
-        </TableRow>
-
-        <TableRow
-            android:paddingTop="5dp"
-            android:background="@color/White">
-
-            <TextView
-                android:paddingLeft="35dp"
-                android:text="ตั้งเวลา"
-                android:textColor="@color/Black" />
-
-            <TextView
-                android:text="ปริมาณนม"
-                android:textColor="@color/Black" />
-
-            <ImageButton
-                android:id="@+id/button_add"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginLeft="60dp"
-                android:background="@drawable/ic_add"
-
-                />
-
-
-        </TableRow>
-
-
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="1dip"
-            android:background="#CCCCCC"
-            android:paddingTop="5dp" />
-
-
-
-
-            <ListView
-                android:id="@+id/listViewTime"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            </ListView>
-
-
-
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="1dip"
-            android:background="#CCCCCC"
-            android:paddingTop="5dp" />
+    <TableRow
+        android:background="@color/White"
+        android:paddingTop="5dp">
 
         <TextView
-            android:gravity="center"
-            android:text="เลือกวัน"
-            android:textColor="@color/Black"
-            android:textSize="20sp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#e1e1e1"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <TextView
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:text="|"
-                android:textSize="20sp" />
-
-            <ToggleButton
-                android:id="@+id/txtSun"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:textSize="10sp"
-                android:textOff="อา"
-                android:textOn="อา"
-                android:textColor="#ff0000"/>
-
-            <ToggleButton
-                android:id="@+id/txtMon"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:textOn="จ"
-                android:textOff="จ"
-                android:textSize="10sp" />
-
-
-
-            <ToggleButton
-                android:id="@+id/txtTues"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:textOn="อ"
-                android:textOff="อ"
-                android:textSize="10sp" />
-
-
-
-            <ToggleButton
-                android:id="@+id/txtWed"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:textOn="พ"
-                android:textOff="พ"
-                android:textSize="10sp" />
-
-
-
-            <ToggleButton
-                android:id="@+id/txtThurs"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:textOn="พฤ"
-                android:textOff="พฤ"
-                android:textSize="10sp" />
-
-
-
-            <ToggleButton
-                android:id="@+id/txtFri"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:textOn="ศ"
-                android:textOff="ศ"
-                android:textSize="10sp" />
-
-
-
-            <ToggleButton
-                android:id="@+id/txtSat"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:textOn="ส"
-                android:textOff="ส"
-                android:textSize="10sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="|"
-                android:textSize="20sp" />
-
-        </LinearLayout>
-
+            android:paddingLeft="35dp"
+            android:text="ตั้งเวลา"
+            android:textColor="@color/Black" />
 
         <TextView
-            android:gravity="center"
-            android:paddingTop="10dp"
-            android:text="เลือกคอก"
-            android:textColor="@color/Black"
+            android:text="ปริมาณนม"
+            android:textColor="@color/Black" />
+
+        <ImageButton
+            android:id="@+id/button_add"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="60dp"
+            android:background="@drawable/ic_add"
+
+            />
+
+
+    </TableRow>
+
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dip"
+        android:background="#CCCCCC"
+        android:paddingTop="5dp" />
+
+
+    <ListView
+        android:id="@+id/listViewTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </ListView>
+
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dip"
+        android:background="#CCCCCC"
+        android:paddingTop="5dp" />
+
+    <TextView
+        android:gravity="center"
+        android:text="เลือกวัน"
+        android:textColor="@color/Black"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#e1e1e1"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="|"
             android:textSize="20sp" />
 
-        <View
+        <ToggleButton
+            android:id="@+id/txtSun"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:textColor="#ff0000"
+            android:textOff="อา"
+            android:textOn="อา"
+            android:textSize="10sp" />
+
+        <ToggleButton
+            android:id="@+id/txtMon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:textOff="จ"
+            android:textOn="จ"
+            android:textSize="10sp" />
+
+
+        <ToggleButton
+            android:id="@+id/txtTues"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:textOff="อ"
+            android:textOn="อ"
+            android:textSize="10sp" />
+
+
+        <ToggleButton
+            android:id="@+id/txtWed"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:textOff="พ"
+            android:textOn="พ"
+            android:textSize="10sp" />
+
+
+        <ToggleButton
+            android:id="@+id/txtThurs"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:textOff="พฤ"
+            android:textOn="พฤ"
+            android:textSize="10sp" />
+
+
+        <ToggleButton
+            android:id="@+id/txtFri"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:textOff="ศ"
+            android:textOn="ศ"
+            android:textSize="10sp" />
+
+
+        <ToggleButton
+            android:id="@+id/txtSat"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:textOff="ส"
+            android:textOn="ส"
+            android:textSize="10sp" />
+
+        <TextView
             android:layout_width="wrap_content"
-            android:layout_height="1dip"
-            android:background="#CCCCCC"
-            android:paddingTop="5dp" />
-
-        <LinearLayout
-            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.1"
-            android:orientation="horizontal">
+            android:text="|"
+            android:textSize="20sp" />
 
-            <ListView
-                android:id="@+id/listView_slStallAtMilk"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            </ListView>
-
-        </LinearLayout>
+    </LinearLayout>
 
 
-        <LinearLayout android:gravity="center">
+    <Button
+        android:id="@+id/btn_selectStall"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:text="เลือกคอก"
+        android:textColor="@color/Black"
+        android:textSize="20sp" />
 
-            <Button
-                android:id="@+id/btnSave"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="บันทึก"
-                android:textColor="@color/Black" />
 
-            <Button
-                android:id="@+id/btnCancel"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="ยกเลิก"
-                android:textColor="@color/Black" />
-        </LinearLayout>
+    <TableRow
+        android:paddingLeft="10dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="10dp">
 
+        <TextView
+            android:text="คอกที่ : "
+            android:textColor="@color/Black" />
+
+        <TextView
+            android:id="@+id/txtStallSL"
+            android:background="#a4efed"
+            android:textColor="@color/Black" />
+    </TableRow>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dip"
+        android:background="#CCCCCC"
+        android:paddingTop="10dp" />
+
+    <LinearLayout android:gravity="center"
+        android:paddingTop="30dp">
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="บันทึก"
+            android:textColor="@color/Black" />
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="ยกเลิก"
+            android:textColor="@color/Black" />
+    </LinearLayout>
 
 
 </TableLayout>

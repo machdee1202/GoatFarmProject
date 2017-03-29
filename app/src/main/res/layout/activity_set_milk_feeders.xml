@@ -101,7 +101,7 @@
     </TableRow>
 
     <Button
-        android:id="@+id/btStallActiveNow"
+        android:id="@+id/btn_selectStall"
         android:text="เลือกคอก"
         android:textColor="@color/Black"
         android:layout_height="50dp"/>

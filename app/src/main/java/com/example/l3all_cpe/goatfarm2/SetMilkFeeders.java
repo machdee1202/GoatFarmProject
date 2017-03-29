@@ -44,7 +44,7 @@ public class SetMilkFeeders extends Activity {
     RadioButton rdBt;
     ArrayList<HashMap<String, String>> BtnList;
     String[] itemmilk ={"0.5","1","1.5","2"};
-    String Tjobs = "NOW";
+    String Tjobs = "NOW()";
 
 
 
@@ -423,6 +423,6 @@ public class SetMilkFeeders extends Activity {
         btDel = (TextView) findViewById(R.id.btDel);
         mButtonBack = (ImageButton) findViewById(R.id.button_back);
         mActiveMilk = (Button) findViewById(R.id.btActiveNow);
-        mSelectStall = (Button) findViewById(R.id.btStallActiveNow);
+        mSelectStall = (Button) findViewById(R.id.btn_selectStall);
     }
 }
