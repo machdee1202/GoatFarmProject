@@ -434,6 +434,13 @@ public class AddAutoMilkFeeders extends Activity {
         lisView1.setAdapter(sAdap);
 
     }
+    public boolean saveAddAutoFeeders() {
+
+
+        return true;
+    }
+
+
 }
 
 

@@ -70,70 +70,30 @@
 
     </RelativeLayout>
 
+
     <TableRow
-        android:paddingBottom="5dp"
+
+        android:paddingLeft="10dp"
         android:paddingTop="10dp">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:text="เลือกช่วงอายุ"
-            android:textColor="@color/Black"
-            android:textSize="20sp" />
-
-        <Button
-
-            android:id="@+id/btnPlanAge"
-            android:layout_height="40dp"
-            android:layout_marginLeft="10dp"
-            android:text="ช่วงอายุ"
-            android:textSize="15sp"
-
-            />
-
-    </TableRow>
-
-    <TableRow
-        android:background="@color/White"
-        android:paddingTop="5dp">
-
-        <TextView
-            android:paddingLeft="35dp"
-            android:text="ตั้งเวลา"
+            android:text="คอกที่ : "
             android:textColor="@color/Black" />
 
         <TextView
-            android:text="ปริมาณนม"
+            android:id="@+id/txtStallSL"
+            android:background="#a4efed"
             android:textColor="@color/Black" />
-
-        <ImageButton
-            android:id="@+id/button_add"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginLeft="60dp"
-            android:background="@drawable/ic_add"
-
-            />
-
-
     </TableRow>
 
-
-    <View
-        android:layout_width="wrap_content"
-        android:layout_height="1dip"
-        android:background="#CCCCCC"
-        android:paddingTop="5dp" />
-
-
-    <ListView
-        android:id="@+id/listViewTime"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    </ListView>
-
+    <Button
+        android:id="@+id/btn_selectStall"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:text="เลือกคอก"
+        android:textColor="@color/Black"
+        android:textSize="15sp" />
 
     <View
         android:layout_width="wrap_content"
@@ -246,30 +206,61 @@
 
     </LinearLayout>
 
+    <TableRow
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp">
 
-    <Button
-        android:id="@+id/btn_selectStall"
-        android:gravity="center"
-        android:paddingTop="10dp"
-        android:text="เลือกคอก"
-        android:textColor="@color/Black"
-        android:textSize="20sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="เลือกช่วงอายุ"
+            android:textColor="@color/Black"
+            android:textSize="20sp" />
 
+        <Button
+
+            android:id="@+id/btnPlanAge"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:text="ช่วงอายุ"
+            android:textSize="15sp"
+
+            />
+
+    </TableRow>
 
     <TableRow
-        android:paddingLeft="10dp"
-        android:paddingTop="20dp"
-        android:paddingBottom="10dp">
+        android:background="@color/White"
+        android:paddingTop="5dp">
 
         <TextView
-            android:text="คอกที่ : "
+            android:paddingLeft="35dp"
+            android:text="ตั้งเวลา"
             android:textColor="@color/Black" />
 
         <TextView
-            android:id="@+id/txtStallSL"
-            android:background="#a4efed"
+            android:text="ปริมาณนม"
             android:textColor="@color/Black" />
+
+
     </TableRow>
+
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dip"
+        android:background="#CCCCCC"
+        android:paddingTop="5dp" />
+
+
+        <ListView
+            android:id="@+id/listViewTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </ListView>
+
 
     <View
         android:layout_width="wrap_content"
@@ -277,21 +268,24 @@
         android:background="#CCCCCC"
         android:paddingTop="10dp" />
 
-    <LinearLayout android:gravity="center"
-        android:paddingTop="30dp">
+    <LinearLayout
+        android:gravity="center"
+        android:paddingTop="10dp">
 
         <Button
             android:id="@+id/btnSave"
             android:layout_width="150dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:text="บันทึก"
+            android:textSize="15sp"
             android:textColor="@color/Black" />
 
         <Button
             android:id="@+id/btnCancel"
             android:layout_width="150dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:text="ยกเลิก"
+            android:textSize="15sp"
             android:textColor="@color/Black" />
     </LinearLayout>
 
