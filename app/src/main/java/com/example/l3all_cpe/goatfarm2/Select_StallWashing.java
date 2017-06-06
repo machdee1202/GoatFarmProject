@@ -4,10 +4,12 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +17,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -202,10 +205,50 @@ public class Select_StallWashing extends Activity {
                 @Override
                 public void onClick(View v) {
                     if (chk_slStall.isChecked()==true){
+                        Log.d("เลือกคอกที่  "+MyArrList.get(position).get("Stall").toString(), chk_slStall.getTag().toString());
                         Toast.makeText(getApplicationContext(), "เลือกคอกที่ : "+ MyArrList.get(position).get("Stall"), Toast.LENGTH_SHORT).show();
                     }
-
+                    else
+                    {
+                        Log.d("ยกเลิกคอกที่  "+MyArrList.get(position).get("Stall").toString(), chk_slStall.getTag().toString());
+                        Toast.makeText(getApplicationContext(), "ยกเลิกคอกที่ : "+ MyArrList.get(position).get("Stall"), Toast.LENGTH_SHORT).show();
+                    }
                     // Request to Select Stall.
+
+                }
+            });
+            mButtonConfirm.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    final ListView lisView1 = (ListView)findViewById(R.id.listView_slStallMilk);
+                    //lisView1.setAdapter(new ImageAdapter(Select_StallMilk.this));
+                    Intent newActivity = new Intent(Select_StallWashing.this,SetWashing.class);
+
+                    int count = lisView1.getAdapter().getCount();
+                    for (int i = 0; i < count; i++) {
+                        LinearLayout itemLayout = (LinearLayout)lisView1.getChildAt(i); // Find by under LinearLayout
+                        CheckBox chk_slStall = (CheckBox)itemLayout.findViewById(R.id.chk_slStall);
+
+                        if(chk_slStall.isChecked()==true)
+                        {
+                            //Log.d("Item  "+String.valueOf(i), chk_slStall.getTag().toString());
+                            Log.d("Item  ", chk_slStall.getTag().toString());
+                            Toast.makeText(getApplicationContext(), "เลือกคอกที่ " + chk_slStall.getTag().toString() ,Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getApplicationContext(), "เลือกคอกที่ : "+ MyArrList.get(position).get("Stall"), Toast.LENGTH_SHORT).show();
+                            //***รอแก้การส่งค่า***//
+                            String sStall= chk_slStall.getTag().toString();
+                            //Intent newActivity = new Intent(Select_StallMilk.this,SetMilkFeeders.class);
+                            //***รอแก้การส่งค่า***//
+                            newActivity.putExtra("Stall", sStall);
+                            //startActivity(newActivity);
+
+
+                        }
+
+                    }
+                    startActivity(newActivity);
+                    finish();
 
                 }
             });
@@ -215,7 +258,9 @@ public class Select_StallWashing extends Activity {
             txtStall.setPadding(5, 0, 0, 0);
             txtStall.setText(MyArrList.get(position).get("Stall"));
 
-
+            // ColChk
+            CheckBox Chk_Stall = (CheckBox) convertView.findViewById(R.id.chk_slStall);
+            Chk_Stall.setTag(MyArrList.get(position).get("Stall"));
 
 
 
@@ -264,12 +309,8 @@ public class Select_StallWashing extends Activity {
                     JSONObject c = data.getJSONObject(i);
 
                     map = new HashMap<String, String>();
-                    map.put("GoatID", c.getString("GoatID"));
                     map.put("Stall", c.getString("Stall"));
-                    map.put("Age", c.getString("Age"));
-                    map.put("Genetic", c.getString("Genetic"));
-                    map.put("Sex", c.getString("Sex"));
-                    map.put("Date_start", c.getString("Date_start"));
+
 
                     MyArrList.add(map);
 

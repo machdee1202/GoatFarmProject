@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -235,7 +236,7 @@ public class SetMilkFeeders extends Activity {
 
 
                     String ww = "http://";
-                    String fphp ="/addJobs.php";
+                    String fphp ="/addJobsFeeds.php";
                     String url = ww + strIP + fphp;
 
 
@@ -246,11 +247,13 @@ public class SetMilkFeeders extends Activity {
 
                     String resultServer = NetConnect.getHttpPost(url, params);
 
+                    //JSONArray data = new JSONArray(params);
 
                     /*** Default Value ***/
                     String strStatusID = "0";
                     String strError = "ไม่สามารถเชื่อมต่อเซิฟเวอร์!";
 
+                    //for(int i = 0; i < data.length(); i++){}
                     JSONObject c;
                     try {
                         c = new JSONObject(resultServer);

@@ -70,7 +70,7 @@
             android:textColor="@color/Black" />
 
         <TextView
-            android:id="@+id/txtStallWashing"
+            android:id="@+id/txtStallWashingSL"
             android:textColor="@color/Black"
             android:background="#a4efed" />
 
